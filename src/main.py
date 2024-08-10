@@ -22,11 +22,11 @@ def get_temperature_sensors():
             "sensor_limit_low": tmap.get("min"), 
             "sensor_limit_high": tmap.get("max"),
             "sensor_temp_low": round(random.uniform(float(red.get(sid).split(",")[0]),
-                                              float(red.get(sid).split(",")[0])*1.05 if random.randint(1,10)%2==0 
-                                              else float(red.get(sid).split(",")[0])*0.95),2),
+                                              float(red.get(sid).split(",")[0])*1.025 if random.randint(1,10)%2==0 
+                                              else float(red.get(sid).split(",")[0])*0.975),2),
             "sensor_temp_high": round(random.uniform(float(red.get(sid).split(",")[1]),
-                                              float(red.get(sid).split(",")[1])*1.05 if random.randint(1,10)%2==0 
-                                              else float(red.get(sid).split(",")[1])*0.95),2),
+                                              float(red.get(sid).split(",")[1])*1.025 if random.randint(1,10)%2==0 
+                                              else float(red.get(sid).split(",")[1])*0.975),2),
             "sensor_temp_low_prev": float(red.get(sid).split(",")[0]),
             "sensor_temp_high_prev": float(red.get(sid).split(",")[1])
         } for sid, tmap in sensors.items()     
