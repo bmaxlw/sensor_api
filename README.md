@@ -8,8 +8,7 @@ Requirements: Python, Docker (with Docker-compose)
    export REDIS_PASSWORD="..."
    export REDIS_PORT="..."
    export REDIS_DATABASES="..."
-   export RED_HOST="..."
-   export RED_PORT="..."
+   export REDIS_HOST="..."
    `
 3. Make **env.sh** executable by calling `chmod +x env.sh` from a repo root
 4. Execute **env.sh** using `source env.sh` from a repo root

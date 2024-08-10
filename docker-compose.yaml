@@ -5,7 +5,7 @@ services:
     image: redis:latest
     restart: always
     ports:
-      - "${RED_PORT}:${RED_PORT}"
+      - "${REDIS_PORT}:${REDIS_PORT}"
     volumes:
       - /path/to/local/dаta:/root/redis
       - /path/to/local/redis.conf:/usr/local/etc/redis/redis.conf
@@ -13,3 +13,11 @@ services:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_DATABASES=${REDIS_DATABASES}
+
+  sensorapi:
+    image: sensorapi:0.0.1
+    restart: always
+    ports:
+      - "${API_PORT}:${API_PORT}"
+    environment:
+      - REDIS_HOST=redis
